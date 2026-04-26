@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "routes": [
-    { "src": "/list/(.*)", "dest": "/list/index.html" }
+    { "src": "/list/(.*)", "dest": "/list/index.html" },
+    { "src": "/hello", "dest": "/index.html" }
   ]
 }
