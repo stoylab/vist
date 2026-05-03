@@ -12,6 +12,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/confirmed", "destination": "/confirmed.html" },
     { "source": "/delete-account", "destination": "/delete-account.html" },
+    { "source": "/support", "destination": "/support.html" },
     { "source": "/.well-known/apple-app-site-association", "destination": "/.well-known/apple-app-site-association" },
     { "source": "/.well-known/assetlinks.json", "destination": "/.well-known/assetlinks.json" }
   ]
