@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vist – Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --orange: #FF6B35;
+      --orange-light: #FF8B5E;
+      --bg: #0f0f0f;
+      --surface: #181818;
+      --surface2: #222222;
+      --border: rgba(255,255,255,0.07);
+      --text: #f0ede8;
+      --muted: #888;
+      --font: 'Inter', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── HEADER ── */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 40px 24px 0;
+    }
+
+    .logo-img {
+      height: 36px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 64px 24px 48px;
+      max-width: 560px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,107,53,0.12);
+      border: 1px solid rgba(255,107,53,0.25);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge svg {
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+
+    h1 span {
+      color: var(--orange);
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 440px;
+    }
+
+    /* ── DOWNLOAD SECTION ── */
+    .download-section {
+      width: 100%;
+      max-width: 680px;
+      padding: 0 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .store-cards {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .store-card {
+      flex: 1;
+      min-width: 260px;
+      max-width: 320px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+
+    .store-card:hover {
+      border-color: rgba(255,107,53,0.4);
+      background: var(--surface2);
+      transform: translateY(-2px);
+    }
+
+    .store-card:active {
+      transform: translateY(0);
+    }
+
+    .store-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .store-icon.apple {
+      background: #fff;
+    }
+
+    .store-icon.google {
+      background: #fff;
+    }
+
+    .store-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .store-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .store-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .store-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .store-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 100px;
+      margin-top: auto;
+      transition: background 0.15s ease;
+    }
+
+    .store-card:hover .store-cta {
+      background: var(--orange-light);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%;
+      max-width: 680px;
+      height: 1px;
+      background: var(--border);
+      margin: 0 24px 64px;
+    }
+
+    /* ── CONTACT / FAQ ── */
+    .support-section {
+      width: 100%;
+      max-width: 680px;
+      padding: 0 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .support-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+    }
+
+    .support-row-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,107,53,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--orange);
+    }
+
+    .support-row-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .support-row-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .support-row-desc {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .support-row a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .support-row a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── CONTACT FORM ── */
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.18s ease;
+      width: 100%;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #444;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(255,107,53,0.5);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.55;
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 4.5L6 8l3.5-3.5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #1a1a1a;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: 100px;
+      padding: 13px 28px;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.12s ease;
+      align-self: flex-start;
+    }
+
+    .btn-submit:hover {
+      background: var(--orange-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .error-msg {
+      color: #ff8c73;
+      font-size: 12px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+      display: none;
+    }
+
+    /* success state */
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 0 8px;
+      text-align: center;
+    }
+
+    .form-success.visible {
+      display: flex;
+    }
+
+    .success-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,107,53,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+    }
+
+    .form-success p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .form-success strong {
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      .form-row { flex-direction: column; }
+      .contact-form { padding: 24px 20px; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: auto;
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      width: 100%;
+    }
+
+    footer span {
+      color: var(--orange);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .store-cards { flex-direction: column; align-items: center; }
+      .store-card { max-width: 100%; }
+      h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img
+      class="logo-img"
+      alt="Vist"
+      src="data:image/png;base64,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"
+    />
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Support
+    </div>
+    <h1>How can we<br><span>help you?</span></h1>
+    <p>Send us a message and we'll get back to you. Or download Vist on your device below.</p>
+  </div>
+
+  <!-- SUPPORT SECTION (form first) -->
+  <div class="support-section">
+    <div class="section-title">Contact us</div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form" id="form-section">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fromName">Your Name *</label>
+            <input type="text" id="fromName" placeholder="Jane Smith" />
+            <div class="error-msg" id="name-error">Please enter your name.</div>
+          </div>
+          <div class="form-group">
+            <label for="fromEmail">Your Email *</label>
+            <input type="email" id="fromEmail" placeholder="jane@example.com" />
+            <div class="error-msg" id="email-error">Please enter a valid email address.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <option value="">Select a topic…</option>
+            <option value="Bug report">Bug report</option>
+            <option value="Feature request">Feature request</option>
+            <option value="Account issue">Account issue</option>
+            <option value="Billing question">Billing question</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" placeholder="Describe your issue or question in detail…"></textarea>
+          <div class="error-msg" id="message-error">Please enter a message.</div>
+        </div>
+
+        <button class="btn-submit" id="submitBtn" onclick="submitForm()">
+          Send message
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+    </div>
+
+    <div class="form-success" id="success-section">
+      <div class="success-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p><strong>Message sent!</strong><br>We'll get back to you at your email address shortly.</p>
+    </div>
+
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- STORE CARDS -->
+  <div class="download-section">
+    <div class="section-title">Download the app</div>
+    <div class="store-cards">
+
+      <!-- App Store -->
+      <a class="store-card" href="https://apps.apple.com" target="_blank" rel="noopener">
+        <div class="store-icon apple">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M18.64 14.56c-.02-2.56 2.1-3.8 2.2-3.86-1.2-1.75-3.06-1.99-3.72-2.02-1.58-.16-3.08.93-3.88.93-.8 0-2.03-.91-3.34-.88-1.72.03-3.3 1-4.18 2.52-1.78 3.08-.46 7.65 1.28 10.15.84 1.22 1.84 2.59 3.16 2.54 1.27-.05 1.75-.82 3.28-.82 1.53 0 1.97.82 3.31.8 1.36-.02 2.23-1.24 3.06-2.47.97-1.42 1.37-2.8 1.39-2.87-.03-.01-2.54-.97-2.56-3.82z" fill="#111"/>
+            <path d="M16.16 6.96c.7-.85 1.17-2.03 1.04-3.21-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.94-1.05 3.08 1.12.09 2.25-.57 2.95-1.37z" fill="#111"/>
+          </svg>
+        </div>
+        <div class="store-card-body">
+          <div class="store-label">Download on the</div>
+          <div class="store-name">App Store</div>
+          <div class="store-sub">iPhone &amp; iPad · Free</div>
+        </div>
+        <div class="store-cta">
+          Download
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Google Play -->
+      <a class="store-card" href="https://play.google.com" target="_blank" rel="noopener">
+        <div class="store-icon google">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M5.5 4.2c-.28.16-.5.47-.5.87v17.86c0 .4.22.71.5.87l.1.06 10-10v-.24L5.6 4.14l-.1.06z" fill="#4285F4"/>
+            <path d="M19 17.53l-3.33-3.33v-.24l3.34-3.34.07.04 3.95 2.25c1.13.64 1.13 1.69 0 2.33L19 17.53z" fill="#FBBC05"/>
+            <path d="M19.07 17.49L15.67 14 5.5 24.13c.37.4.98.44 1.66.05l11.91-6.69" fill="#EA4335"/>
+            <path d="M19.07 10.51L7.16 3.82C6.48 3.43 5.87 3.47 5.5 3.87L15.67 14l3.4-3.49z" fill="#34A853"/>
+          </svg>
+        </div>
+        <div class="store-card-body">
+          <div class="store-label">Get it on</div>
+          <div class="store-name">Google Play</div>
+          <div class="store-sub">Android · Free</div>
+        </div>
+        <div class="store-cta">
+          Download
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    async function submitForm() {
+      var name = document.getElementById('fromName').value.trim();
+      var email = document.getElementById('fromEmail').value.trim();
+      var subject = document.getElementById('subject').value;
+      var message = document.getElementById('message').value.trim();
+
+      var nameError = document.getElementById('name-error');
+      var emailError = document.getElementById('email-error');
+      var messageError = document.getElementById('message-error');
+
+      // Reset errors
+      nameError.style.display = 'none';
+      emailError.style.display = 'none';
+      messageError.style.display = 'none';
+
+      // Validate
+      var valid = true;
+      if (!name) { nameError.style.display = 'block'; valid = false; }
+      if (!email || !email.includes('@') || !email.includes('.')) { emailError.style.display = 'block'; valid = false; }
+      if (!message) { messageError.style.display = 'block'; valid = false; }
+      if (!valid) return;
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      var formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('subject', subject || 'Not selected');
+      formData.append('message', message);
+      formData.append('_subject', 'Support Request - Vist');
+
+      try {
+        var response = await fetch('https://formspree.io/f/xlgzgobn', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          document.getElementById('form-section').style.display = 'none';
+          document.getElementById('success-section').style.display = 'flex';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send message';
+          alert('Something went wrong. Please email us at vist@stoylab.com');
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+        alert('Something went wrong. Please email us at vist@stoylab.com');
+      }
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 <span>Vist</span> · All rights reserved
+  </footer>
+
+</body>
+</html>
