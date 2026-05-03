@@ -505,8 +505,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="subject">Subject</label>
-          <select id="subject" name="subject">
+          <label for="reason">Subject</label>
+          <select id="reason" name="reason">
             <option value="">Select a topic…</option>
             <option value="bug-report">Bug report</option>
             <option value="feature-request">Feature request</option>
@@ -598,7 +598,7 @@
     async function submitForm() {
       var name = document.getElementById('fromName').value.trim();
       var email = document.getElementById('fromEmail').value.trim();
-      var subject = document.getElementById('subject').value;
+      var reason = document.getElementById('reason').value;
       var message = document.getElementById('message').value.trim();
 
       var nameError = document.getElementById('name-error');
@@ -624,7 +624,7 @@
       var formData = new FormData();
       formData.append('name', name);
       formData.append('email', email);
-      formData.append('subject', subject || 'Not selected');
+      formData.append('reason', reason || 'Not selected');
       formData.append('message', message);
       formData.append('_subject', 'Support Request - Vist');
 
