@@ -11,6 +11,7 @@
     { "source": "/list/:path*", "destination": "/list/index.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/confirmed", "destination": "/confirmed.html" },
+    { "source": "/confirm_email", "destination": "/confirm_email.html" },
     { "source": "/delete-account", "destination": "/delete-account.html" },
     { "source": "/support", "destination": "/support.html" },
     { "source": "/.well-known/apple-app-site-association", "destination": "/.well-known/apple-app-site-association" },
