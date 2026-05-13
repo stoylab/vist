@@ -5,10 +5,8 @@
       {
         "appIDs": ["47469ZWRGU.com.stoylab.vist"],
         "components": [
-          {
-            "/": "/list/*",
-            "comment": "Opens all list deep links"
-          }
+          { "/": "/list/*" },
+          { "/": "/user-lists/*" }
         ]
       }
     ]
