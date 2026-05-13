@@ -9,7 +9,7 @@
   ],
   "rewrites": [
     { "source": "/list/:path*", "destination": "/list/index.html" },
-    { "source": "/user-lists/:path*", "destination": "/user-lists/index.html" }
+    { "source": "/user-lists/:path*", "destination": "/user-lists/index.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/confirmed", "destination": "/confirmed.html" },
     { "source": "/confirm_email", "destination": "/confirm_email.html" },
